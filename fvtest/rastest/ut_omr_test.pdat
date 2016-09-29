@@ -1,0 +1,8 @@
+datfilename=OMRTestTraceFormat.dat
+executable=omr_test
+omr_test.0 0 1 1 N Trc_OMR_Test_Init "  Trace engine initialized for module omr_test"
+omr_test.1 0 1 1 N Trc_OMR_Test_String "  String: %s"
+omr_test.2 0 1 1 N Trc_OMR_Test_Ptr "  Ptr: %p"
+omr_test.3 0 1 1 N Trc_OMR_Test_Int "  Number: %d"
+omr_test.4 0 1 1 N Trc_OMR_Test_ManyParms "  String: %s Ptr: %p Number: %u"
+omr_test.5 0 1 1 N Trc_OMR_Test_UnloggedTracepoint "  This tracepoint should not be logged. Reason: %s"

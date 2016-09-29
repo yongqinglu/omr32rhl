@@ -1,0 +1,5 @@
+datfilename=J9TraceFormat.dat
+executable=j9vgc
+j9vgc.0 0 1 3 N Trc_VGC_Verbosegc "  vgc: %s"
+j9vgc.1 12 1 1 N Assert_VGC_true "* ** ASSERTION FAILED ** at %s:%d: %s"
+j9vgc.2 12 1 1 N Assert_VGC_false "* ** ASSERTION FAILED ** at %s:%d: %s"
