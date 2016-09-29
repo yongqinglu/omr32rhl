@@ -2,3 +2,12 @@
 *.o
 *.so
 *.a
+*.d
+tracegen
+tracemerge
+omrsig.map
+omrsig.exp
+hookgen
+*.so.dbg
+omrsig.exportlist
+*.sentinel
