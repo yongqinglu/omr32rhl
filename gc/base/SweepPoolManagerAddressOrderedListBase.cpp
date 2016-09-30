@@ -470,7 +470,7 @@ MM_SweepPoolManagerAddressOrderedListBase::addFreeMemory(MM_EnvironmentBase *env
 		uintptr_t size1 = _extensions->objectModel.getConsumedSizeInBytesWithHeader(ptr);
 		uintptr_t size2 =J9MODRON_HEAP_SLOTS_PER_MARK_BIT * sizeof(uintptr_t);
 		uintptr_t objectSizeDelta = size1 - size2;
-		printf("zg.SweepPoolManagerAddressOrderedListBase.cpp.addFreeMemory().cp0,size1=%d,size2=%d,objectSizeDelta=%d,ptr=%p,ptr1=%p\n"
+		//printf("zg.SweepPoolManagerAddressOrderedListBase.cpp.addFreeMemory().cp0,size1=%d,size2=%d,objectSizeDelta=%d,ptr=%p,ptr1=%p\n"
 				,size1,size2,objectSizeDelta,ptr,ptr1);
 		Assert_MM_true(objectSizeDelta <= heapFreeByteCount);
 		heapFreeByteCount -= objectSizeDelta;
