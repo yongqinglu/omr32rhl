@@ -94,7 +94,8 @@ test_targets += fvtest/threadextendedtest
 endif
 
 # OMR GLue Target
-main_targets += omr_glue_static_lib
+# zg. remove it.
+#main_targets += omr_glue_static_lib
 
 # Garbage Collection Targets
 ifeq (1,$(OMR_GC))

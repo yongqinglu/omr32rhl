@@ -464,9 +464,14 @@ MM_SweepPoolManagerAddressOrderedListBase::addFreeMemory(MM_EnvironmentBase *env
 	} else {
 		/* Check if the hole is a free list candidate */
 		uintptr_t heapFreeByteCount = MM_Bits::convertSlotsToBytes(size);
-		uintptr_t objectSizeDelta = 
-			_extensions->objectModel.getConsumedSizeInBytesWithHeader((omrobjectptr_t)(address - J9MODRON_HEAP_SLOTS_PER_MARK_BIT))
-			- (J9MODRON_HEAP_SLOTS_PER_MARK_BIT * sizeof(uintptr_t));
+		omrobjectptr_t ptr = (omrobjectptr_t)(address - J9MODRON_HEAP_SLOTS_PER_MARK_BIT);
+		omrobjectptr_t ptr1 = (omrobjectptr_t)address - J9MODRON_HEAP_SLOTS_PER_MARK_BIT;
+
+		uintptr_t size1 = _extensions->objectModel.getConsumedSizeInBytesWithHeader(ptr);
+		uintptr_t size2 =J9MODRON_HEAP_SLOTS_PER_MARK_BIT * sizeof(uintptr_t);
+		uintptr_t objectSizeDelta = size1 - size2;
+		printf("zg.SweepPoolManagerAddressOrderedListBase.cpp.addFreeMemory().cp0,size1=%d,size2=%d,objectSizeDelta=%d,ptr=%p,ptr1=%p\n"
+				,size1,size2,objectSizeDelta,ptr,ptr1);
 		Assert_MM_true(objectSizeDelta <= heapFreeByteCount);
 		heapFreeByteCount -= objectSizeDelta;
 		address = (uintptr_t *) (((uintptr_t)address) + objectSizeDelta);

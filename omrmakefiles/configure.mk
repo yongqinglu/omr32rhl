@@ -41,7 +41,9 @@ include $(top_srcdir)/omrmakefiles/omrcfg.mk
 # top of the build tree.
 # We can't convert OMRGLUE to absolute paths because, for z/OS, Windows, and AIX,
 # the J9 build runs configure and compiles in different directory structures.
-OMRGLUE ?= $(filter /%,./example/glue)$(addprefix $(top_srcdir)/,$(filter-out /%,./example/glue))
+#OMRGLUE ?= $(filter /%,./example/glue)$(addprefix $(top_srcdir)/,$(filter-out /%,./example/glue))
+#zg. Trying to using the glue in some++
+OMRGLUE := $(top_srcdir)/../som++/src/glue $(top_srcdir)/../som++/src/vmobjects
 
 OMR_CROSS_COMPILE := 0
 

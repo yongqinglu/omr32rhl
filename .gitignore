@@ -11,3 +11,5 @@ hookgen
 *.so.dbg
 omrsig.exportlist
 *.sentinel
+.cproject
+language.settings.xml
