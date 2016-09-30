@@ -465,7 +465,7 @@ MM_SweepPoolManagerAddressOrderedListBase::addFreeMemory(MM_EnvironmentBase *env
 		/* Check if the hole is a free list candidate */
 		uintptr_t heapFreeByteCount = MM_Bits::convertSlotsToBytes(size);
 		omrobjectptr_t ptr = (omrobjectptr_t)(address - J9MODRON_HEAP_SLOTS_PER_MARK_BIT);
-		omrobjectptr_t ptr1 = (omrobjectptr_t)address - J9MODRON_HEAP_SLOTS_PER_MARK_BIT;
+		//omrobjectptr_t ptr1 = (omrobjectptr_t)address - J9MODRON_HEAP_SLOTS_PER_MARK_BIT;
 
 		uintptr_t size1 = _extensions->objectModel.getConsumedSizeInBytesWithHeader(ptr);
 		uintptr_t size2 =J9MODRON_HEAP_SLOTS_PER_MARK_BIT * sizeof(uintptr_t);
